@@ -1,0 +1,31 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.tabSize": 2,
+  "cSpell.words": [
+    "Darrer",
+    "hydrater",
+    "jondarrer",
+    "jsxify"
+  ],
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#fe91a4",
+    "activityBar.activeBackground": "#fe91a4",
+    "activityBar.activeBorder": "#e5ffdf",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#e5ffdf",
+    "activityBarBadge.foreground": "#15202b",
+    "titleBar.activeBackground": "#fd5f7a",
+    "titleBar.inactiveBackground": "#fd5f7a99",
+    "titleBar.activeForeground": "#15202b",
+    "titleBar.inactiveForeground": "#15202b99",
+    "statusBar.background": "#fd5f7a",
+    "statusBarItem.hoverBackground": "#fc2d50",
+    "statusBar.foreground": "#15202b",
+    "sash.hoverBorder": "#fe91a4",
+    "statusBarItem.remoteBackground": "#fd5f7a",
+    "statusBarItem.remoteForeground": "#15202b"
+  },
+  "peacock.color": "#FD5F7A"
+}
