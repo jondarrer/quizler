@@ -1,0 +1,19 @@
+[
+  {
+    "question": "Name all 4 regions of the island of Ireland",
+    "type": "AllOf",
+    "choices": ["Ulster", "Leinster", "Munster", "Connaught"]
+  },
+  {
+    "question": "Name 3 counties in Northern Ireland",
+    "type": "ThreeOf",
+    "choices": [
+      "Fermanagh",
+      "Tyrone",
+      ["Derry", "Londonderry"],
+      "Antrim",
+      "Down",
+      "Armagh"
+    ]
+  }
+]
