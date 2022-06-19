@@ -8,12 +8,33 @@
     "question": "Name 3 counties in Northern Ireland",
     "type": "ThreeOf",
     "choices": [
-      "Fermanagh",
-      "Tyrone",
-      ["Derry", "Londonderry"],
-      "Antrim",
-      "Down",
-      "Armagh"
+      ["Fermanagh", "Fear Manach"],
+      ["Tyrone", "Tir Eoghain"],
+      ["Derry", "Londonderry", "Doire"],
+      ["Antrim", "Aontroim"],
+      ["Down", "An Dun"],
+      ["Armagh", "Ard Mhacha"]
+    ]
+  },
+  {
+    "question": "Give the Irish name for one of the counties in Northern Ireland",
+    "type": "OneOf",
+    "choices": [
+      "Fear Manach",
+      "Tir Eoghain",
+      "Doire",
+      "Aontroim",
+      "An Dun",
+      "Ard Mhacha"
+    ]
+  },
+  {
+    "question": "Name all 3 counties of Ulster in Ireland",
+    "type": "AllOf",
+    "choices": [
+      ["Donegal", "Dun na nGall"],
+      ["Cavan", "An Cabhan"],
+      ["Monaghan", "Muineachan"]
     ]
   }
 ]

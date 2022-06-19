@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "description": "A Node.js library for developing quizes",
   "main": "src/index.js",
+  "bin": "src/main.js",
   "files": [
     "src"
   ],
   "scripts": {
     "test": "jest",
     "lint-staged": "lint-staged",
-    "examples-inquirer": "node examples/inquirer.js",
+    "examples-inquirer": "node src/main.js",
     "prepare": "husky install"
   },
   "repository": {

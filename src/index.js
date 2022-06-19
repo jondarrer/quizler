@@ -1,3 +1,3 @@
-const contains = require('./contains');
+const quizler = require('./quizler');
 
-module.exports = { contains };
+module.exports = quizler;
