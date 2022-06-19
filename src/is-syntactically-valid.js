@@ -14,6 +14,8 @@ const isSyntacticallyValid = ({ type, choices }, answers) => {
       return answers.length === 3;
     case 'AllOf':
       return answers.length === choices.length;
+    default:
+      return true;
   }
 };
 
