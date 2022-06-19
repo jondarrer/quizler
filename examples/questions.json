@@ -17,8 +17,8 @@
     ]
   },
   {
-    "question": "Give the Irish name for one of the counties in Northern Ireland",
-    "type": "OneOf",
+    "question": "Give the Irish name for at least one of the counties in Northern Ireland",
+    "type": "AtLeastOneOf",
     "choices": [
       "Fear Manach",
       "Tir Eoghain",

@@ -12,6 +12,8 @@ const isCorrect = ({ type, choices }, answers) => {
   switch (type) {
     case 'OneOf':
       return correctAnswers.length === 1;
+    case 'AtLeastOneOf':
+      return correctAnswers.length >= 1;
     case 'TwoOf':
       return correctAnswers.length === 2;
     case 'ThreeOf':
