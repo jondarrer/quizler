@@ -20,4 +20,17 @@ const Type = {
  * @property {Array<Choice>} choices
  */
 
+/**
+ * @typedef {Object} AnswerPart
+ * @property {string} text
+ * @property {number} index
+ * @property {boolean?} isAcceptable
+ */
+
+/**
+ * @typedef {Object} AnswerParts
+ * @property {string} input
+ * @property {Array<AnswerPart>} parts
+ */
+
 module.exports = { Type };

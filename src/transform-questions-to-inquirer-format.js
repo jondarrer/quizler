@@ -1,7 +1,9 @@
 const chalk = require('chalk');
+
 const isSyntacticallyValid = require('./is-syntactically-valid');
-const isCorrect = require('./is-correct');
-const inputToAnswerArray = require('./input-to-answer-array');
+const identifyAnswerParts = require('./identify-answer-parts');
+const markAnswerParts = require('./mark-answer-parts');
+const formatMessage = require('./format-message');
 
 /**
  *
@@ -15,10 +17,9 @@ const transformQuestionsToInquirerFormat = (questions) =>
     type: 'input',
     transformer: (input, _answers, { isFinal }) => {
       if (isFinal) {
-        const result = isCorrect(question, inputToAnswerArray(input));
-        const message =
-          result === true ? chalk.green('Correct') : chalk.red('Incorrect');
-        return `${chalk.cyan(input)} ${chalk.bold(message)}`;
+        const answerParts = identifyAnswerParts(input);
+        markAnswerParts(question, answerParts);
+        return formatMessage(answerParts);
       } else {
         return input;
       }
