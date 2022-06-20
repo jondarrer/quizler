@@ -1,3 +1,5 @@
+const { Type } = require('./types');
+
 /**
  *
  * @param {import('./types').Question} question
@@ -6,14 +8,16 @@
  */
 const isSyntacticallyValid = ({ type, choices }, answers) => {
   switch (type) {
-    case 'OneOf':
+    case Type.OneOf:
       return answers.length === 1;
-    case 'TwoOf':
+    case Type.TwoOf:
       return answers.length === 2;
-    case 'ThreeOf':
+    case Type.ThreeOf:
       return answers.length === 3;
-    case 'AllOf':
+    case Type.AllOf:
       return answers.length === choices.length;
+    case Type.MultipleChoice:
+      return answers.length === 1;
     default:
       return true;
   }

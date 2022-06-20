@@ -2,7 +2,7 @@ const chalk = require('chalk');
 
 const isSyntacticallyValid = require('./is-syntactically-valid');
 const identifyAnswerParts = require('./identify-answer-parts');
-const markAnswerParts = require('./mark-answer-parts');
+const { markAnswerParts } = require('./mark-answer-parts');
 const formatMessage = require('./format-message');
 
 /**
@@ -14,7 +14,8 @@ const transformQuestionsToInquirerFormat = (questions) =>
   questions.map((question) => ({
     message: question.question,
     name: question.name,
-    type: 'input',
+    type: question.type === 'MultipleChoice' ? 'list' : 'input',
+    choices: question.type === 'MultipleChoice' ? question.choices : undefined,
     transformer: (input, _answers, { isFinal }) => {
       if (isFinal) {
         const answerParts = identifyAnswerParts(input);

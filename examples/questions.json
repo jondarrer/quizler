@@ -36,5 +36,39 @@
       ["Cavan", "An Cabhan"],
       ["Monaghan", "Muineachan"]
     ]
+  },
+  {
+    "question": "Name 2 counties which ajoin Dublin county",
+    "type": "TwoOf",
+    "choices": [
+      ["Wicklow", "Cill Mhantain"],
+      ["Kildare", "Cill Dara"],
+      ["Meath", "An Mhi"],
+      ["Louth", "La"]
+    ]
+  },
+  {
+    "question": "Name any large lake in the island of Ireland except the biggest",
+    "type": "OneOf",
+    "choices": [
+      ["Lough Corrib", "Loch Coirib"],
+      ["Lough Derg", "Loch Deirgeirt"],
+      ["Lough Erne", "Loch Eirne"],
+      ["Lough Ree", "Loch Ri"],
+      ["Lough Mask", "Loch Measca"],
+      ["Lough Conn", "Loch Con"],
+      ["Lough Allen", "Loch Aillionn"],
+      ["Lough Melvin", "Loch Meilbhe"],
+      ["Lough Leane", "Loch Lein"],
+      ["Poulaphouca Reservoir", "Pollaphuca", "Poll a' Phuca"],
+      ["Lough Sheelin", "Loch Siodh Linn"],
+      ["Lough Carra", "Loch Ceara"]
+    ]
+  },
+  {
+    "question": "When is St Patrick's day?",
+    "type": "MultipleChoice",
+    "choices": ["March 9th", "March 17th", "March 21st"],
+    "correctIndex": 1
   }
 ]

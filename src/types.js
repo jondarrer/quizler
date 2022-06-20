@@ -3,9 +3,11 @@
  */
 const Type = {
   OneOf: 'OneOf',
+  AtLeastOneOf: 'AtLeastOneOf',
   TwoOf: 'TwoOf',
   ThreeOf: 'ThreeOf',
   AllOf: 'AllOf',
+  MultipleChoice: 'MultipleChoice',
 };
 
 /**
