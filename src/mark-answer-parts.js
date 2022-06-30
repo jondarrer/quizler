@@ -50,6 +50,8 @@ const canPartBeMarked = ({ type }, partIndex) => {
       return true;
     case Type.MultipleChoice:
       return partIndex < 1;
+    case Type.MultipleChoiceMoreThanOne:
+      return true;
     default:
       return true;
   }

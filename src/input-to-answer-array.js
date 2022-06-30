@@ -3,6 +3,6 @@
  * @returns {Array<string>} The array of answers
  */
 const inputToAnswerArray = (input) =>
-  input.split(',').map((answer) => answer.trim());
+  input.split ? input.split(',').map((answer) => answer.trim()) : [];
 
 module.exports = inputToAnswerArray;

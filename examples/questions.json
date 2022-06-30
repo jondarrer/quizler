@@ -1,8 +1,20 @@
 [
   {
+    "question": "When is St Patrick's day?",
+    "type": "MultipleChoice",
+    "choices": ["March 9th", "March 17th", "March 21st"],
+    "correctIndex": 1
+  },
+  {
     "question": "Name all 4 regions of the island of Ireland",
     "type": "AllOf",
     "choices": ["Ulster", "Leinster", "Munster", "Connaught"]
+  },
+  {
+    "question": "Which two national parks are in Ireland",
+    "type": "MultipleChoiceMoreThanOne",
+    "choices": ["Glenveagh", "Giant's Causeway", "Wild Nephin", "Cairngorms"],
+    "correctIndex": [0, 2]
   },
   {
     "question": "Name 3 counties in Northern Ireland",
@@ -66,9 +78,26 @@
     ]
   },
   {
-    "question": "When is St Patrick's day?",
-    "type": "MultipleChoice",
-    "choices": ["March 9th", "March 17th", "March 21st"],
-    "correctIndex": 1
+    "question": "What is the name of the highest mountain in Ireland and which mountain range is it part of?",
+    "type": "AllOf",
+    "choices": [
+      ["Carrauntoohil", "Carrauntoohill", "Corran Tuathail"],
+      ["MacGillycuddy's Reeks", "Na Cruacha Dubha"]
+    ]
+  },
+  {
+    "question": "During which years did the Irish Potato Famine take place?",
+    "type": "AllOf",
+    "choices": [["1845-49", "1845-1849"]]
+  },
+  {
+    "question": "In what year did the Irish Civil War break out?",
+    "type": "AllOf",
+    "choices": ["1922"]
+  },
+  {
+    "question": "When was the Easter Rising?",
+    "type": "AllOf",
+    "choices": [["1916", "April 1916"]]
   }
 ]

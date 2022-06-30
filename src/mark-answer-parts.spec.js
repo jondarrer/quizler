@@ -431,6 +431,43 @@ describe('markAnswerParts', () => {
       expect(answerParts.parts[0].isAcceptable).toBeTruthy();
     });
   });
+  describe('MultipleChoiceMoreThanOne', () => {
+    // Arrange
+    const question = {
+      question: "When is St Patrick's day?",
+      type: 'MultipleChoice',
+      choices: ['March 9th', 'March 17th', 'March 21th'],
+      correctIndex: 1,
+    };
+
+    it('should mark 0 as acceptable given 1 incorrect response', () => {
+      // Arrange
+      const answerParts = {
+        input: 'March 9th',
+        parts: [{ text: 'March 9th' }],
+      };
+
+      // Act
+      markAnswerParts(question, answerParts);
+
+      // Assert
+      expect(answerParts.parts[0].isAcceptable).toBeFalsy();
+    });
+
+    it('should mark 1 as acceptable given 1 correct response', () => {
+      // Arrange
+      const answerParts = {
+        input: 'March 17th',
+        parts: [{ text: 'March 17th' }],
+      };
+
+      // Act
+      markAnswerParts(question, answerParts);
+
+      // Assert
+      expect(answerParts.parts[0].isAcceptable).toBeTruthy();
+    });
+  });
 });
 
 describe('canPartBeMarked', () => {
@@ -600,6 +637,34 @@ describe('canPartBeMarked', () => {
 
       // Assert
       expect(result).toBeFalsy();
+    });
+  });
+  describe('MultipleChoiceMoreThanOne', () => {
+    // Arrange
+    const question = {
+      type: 'MultipleChoiceMoreThanOne',
+    };
+
+    it('should return true for the first part', () => {
+      // Arrange
+      const partIndex = 0;
+
+      // Act
+      const result = canPartBeMarked(question, partIndex);
+
+      // Assert
+      expect(result).toBeTruthy();
+    });
+
+    it('should return true for the hundredth part', () => {
+      // Arrange
+      const partIndex = 99;
+
+      // Act
+      const result = canPartBeMarked(question, partIndex);
+
+      // Assert
+      expect(result).toBeTruthy();
     });
   });
 });

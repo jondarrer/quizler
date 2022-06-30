@@ -4,6 +4,8 @@ const isSyntacticallyValid = require('./is-syntactically-valid');
 const identifyAnswerParts = require('./identify-answer-parts');
 const { markAnswerParts } = require('./mark-answer-parts');
 const formatMessage = require('./format-message');
+const inputToAnswerArray = require('./input-to-answer-array');
+const { Type } = require('./types');
 
 /**
  *
@@ -14,8 +16,8 @@ const transformQuestionsToInquirerFormat = (questions) =>
   questions.map((question) => ({
     message: question.question,
     name: question.name,
-    type: question.type === 'MultipleChoice' ? 'list' : 'input',
-    choices: question.type === 'MultipleChoice' ? question.choices : undefined,
+    type: convertTypeToInquirerType(question.type),
+    choices: convertChoicesToInquirerChoices(question),
     transformer: (input, _answers, { isFinal }) => {
       if (isFinal) {
         const answerParts = identifyAnswerParts(input);
@@ -26,13 +28,44 @@ const transformQuestionsToInquirerFormat = (questions) =>
       }
     },
     validate: (input) =>
-      new Promise((resolve) => {
+      new Promise((resolve) =>
         resolve(
-          isSyntacticallyValid(question, input.split(',')) === true
+          isSyntacticallyValid(question, inputToAnswerArray(input)) === true
             ? true
             : question.type
-        );
-      }),
+        )
+      ),
   }));
+
+/**
+ *
+ * @param {import('./types').Type} type
+ * @returns {string} Inquirer type
+ */
+const convertTypeToInquirerType = (type) => {
+  switch (type) {
+    case Type.MultipleChoice:
+      return 'list';
+    case Type.MultipleChoiceMoreThanOne:
+      return 'checkbox';
+    default:
+      return 'input';
+  }
+};
+
+/**
+ *
+ * @param {import('./types').Question} question
+ * @returns {Array<import('./types').Choice>|undefined} The choices
+ */
+const convertChoicesToInquirerChoices = ({ type, choices }) => {
+  switch (type) {
+    case Type.MultipleChoice:
+    case Type.MultipleChoiceMoreThanOne:
+      return choices;
+    default:
+      return undefined;
+  }
+};
 
 module.exports = transformQuestionsToInquirerFormat;

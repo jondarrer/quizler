@@ -8,6 +8,7 @@ const Type = {
   ThreeOf: 'ThreeOf',
   AllOf: 'AllOf',
   MultipleChoice: 'MultipleChoice',
+  MultipleChoiceMoreThanOne: 'MultipleChoiceMoreThanOne',
 };
 
 /**
