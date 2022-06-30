@@ -1,10 +1,16 @@
 const inquirer = require('inquirer');
+// const ListPrompt = require('inquirer/lib/prompts/list');
 const chalk = require('chalk');
 
 const annotateQuestions = require('./annotate-questions');
 const transformQuestionsToInquirerFormat = require('./transform-questions-to-inquirer-format');
 const isCorrect = require('./is-correct');
 const inputToAnswerArray = require('./input-to-answer-array');
+
+// ListPrompt.prototype.render = new Proxy(
+//   ListPrompt.prototype,
+//   require('./inquirer-overrides/list.render')
+// );
 
 /**
  *
